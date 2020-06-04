@@ -91,6 +91,11 @@ li {
   margin-left: 2px;
 }
 #second-header {
-  margin-left:0px;
+  margin-left: 0px;
   margin-bottom: 2px;
+}
+footer {
+  display: block;
+  margin-top: 8px;
+  line-height: 1.15;
 }
