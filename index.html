@@ -11,8 +11,8 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="src/styles.css"/>
-</head>
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
   <body>
     <div class="weatherApp">
       <div class="container">
@@ -21,117 +21,141 @@
         <form>
           <div class="form-group row" id="form-control1">
             <div class="col-sm-4">
-          <input type="city" placeholder="Search city..." class ="form-control" id="inputcity" autocomplete="off"/>
+              <input
+                type="city"
+                placeholder="Search city..."
+                class="form-control"
+                id="inputcity"
+                autocomplete="off"
+              />
             </div>
-            <button class="btn btn-sm btn-outline-secondary" id="search-button" type="submit">
+            <button
+              class="btn btn-sm btn-outline-secondary"
+              id="search-button"
+              type="submit"
+            >
               Search
             </button>
-          <button class="btn btn-sm btn-outline-secondary" id="current-button" type="submit">
+            <button
+              class="btn btn-sm btn-outline-secondary"
+              id="current-button"
+              type="submit"
+            >
               Current location
             </button>
           </div>
-        </div>
         </form>
-         <div class="row">
+        <div class="row">
           <div class="col-6">
             <img
               src="img/sunnyday.svg"
-              id ="picture"
+              id="picture"
               alt="cloud"
-              style="max-width:400px; height: 300px;"/>
+              style="max-width: 400px; height: 300px;"
+            />
           </div>
           <div class="col-6">
-          <div class="card-body">
-            <h1 class="location_h" id="city"> </h1>
-            <h2 id="weather-condition">  </h2>
-            <div class="temp_h" id="w_temp">
-            <span class="temperature" id="temp">7</span>
-            <span class="units"> <a href="#" id="unitC">°C </a>|<a href="#" id="unitF">°F</a>
-            </span><br />
+            <div class="card-body">
+              <h1 class="location_h" id="city"></h1>
+              <h2 id="weather-condition"></h2>
+              <div class="temp_h" id="w_temp">
+                <span class="temperature" id="temp">7</span>
+                <span class="units">
+                  <a href="#" id="unitC">°C </a>|<a href="#" id="unitF"
+                    >°F</a
+                  > </span
+                ><br />
+              </div>
+              <section class="weatherDetails">
+                <div class="card-text1" id="time-date"></div>
+                <br />
+                <ul>
+                  <li><span id="feels"> </span> °C</li>
+                  <li><span id="humidity"> </span> %</li>
+                  <li><span id="wind"> </span> m/s</li>
+                </ul>
+                <br />
+                <p><small class="text-muted">Last updated 3 mins ago</small></p>
+              </section>
             </div>
-            <section class="weatherDetails">
-              <div class="card-text1" id="time-date"></div>
+          </div>
+        </div>
+        <h1 id="second-header">Weekly Forecast</h1>
+        <br />
+        <div class="weeklyForecast">
+          <div class="row">
+            <div class="col">
+              Friday<br />
+              <img
+                src="img/thunderstorm.svg"
+                alt="thunderstorm"
+                width="70px"
+              /><br />
+              High: 15°C <br />Low:13°C
+            </div>
+            <div class="col">
+              Saturday<br />
+              <img
+                src="img/cloudybutsunny.svg"
+                alt="cloudybutsunny"
+                width="70px"
+              /><br />
+              High: 18°C <br />Low:16°C
+            </div>
+            <div class="col">
+              Sunday<br />
+              <img src="img/sunny.svg" alt="sunny" width="70px" />
               <br />
-              <ul>  
-                <li>
-                  <span id ="feels"> </span> °C
-              </li><li>
-                  <span id="humidity">  </span> %
-              </li><li>
-                  <span id ="wind">  </span> m/s
-              </li>
-              </ul>
+              High: 21°C <br />Low:18°C
+            </div>
+            <div class="col">
+              Monday<br />
+              <img src="img/supercloudy.svg" alt="supercloudy" width="70px" />
               <br />
-              <p><small class="text-muted">Last updated 3 mins ago</small></p>
-            </section>
-          </div> </div>
-          <h1 id="second-header">Weekly Forecast</h1>
-          <br />
-          <div class="weeklyForecast">
-            <div class="row">
-              <div class="col">
-                Friday<br />
-                <img
-                  src="img/thunderstorm.svg"
-                  alt="thunderstorm"
-                  width="70px"
-                /><br />
-                High: 15°C <br />Low:13°C
-              </div>
-              <div class="col">
-                Saturday<br />
-                <img
-                  src="img/cloudybutsunny.svg"
-                  alt="cloudybutsunny"
-                  width="70px"
-                /><br />
-                High: 18°C <br />Low:16°C
-              </div>
-              <div class="col">
-                Sunday<br />
-                <img src="img/sunny.svg" alt="sunny" width="70px" />
-                <br />
-                High: 21°C <br />Low:18°C
-              </div>
-              <div class="col">
-                Monday<br />
-                <img src="img/supercloudy.svg" alt="supercloudy" width="70px" />
-                <br />
-                High: 18°C <br />Low:17°C
-              </div>
-              <div class="col">
-                Tuesday<br />
-                <img src="img/supercloudy.svg" alt="supercloudy" width="70px" />
-                <br />
-                High: 19°C <br />Low:16°C
-              </div>
-              <div class="col">
-                Wednesday<br />
-                <img src="img/rainy.svg" alt="rainy" width="70px" />
-                <br />
-                High: 17 °C<br />Low:15°C
-              </div>
+              High: 18°C <br />Low:17°C
+            </div>
+            <div class="col">
+              Tuesday<br />
+              <img src="img/supercloudy.svg" alt="supercloudy" width="70px" />
+              <br />
+              High: 19°C <br />Low:16°C
+            </div>
+            <div class="col">
+              Wednesday<br />
+              <img src="img/rainy.svg" alt="rainy" width="70px" />
+              <br />
+              High: 17 °C<br />Low:15°C
+            </div>
             <footer>
-              <small class="text-muted"
+              <small class="text-muted">
+                <a
+                  href="https://github.com/stersj/my-weather-app"
+                  target="_blank"
+                  >Open-source code</a
+                >, by<a
+                  href="https://www.linkedin.com/in/esther-sim-jensen-47bb3120/"
+                  target="_blank"
+                  class="profileLink"
                 >
-                  <a href="https://github.com/stersj/my-weather-app" target="_blank">Open-source code</a>, by<a href="https://www.linkedin.com/in/esther-sim-jensen-47bb3120/" target="_blank" class="profileLink"> Esther Sim</a>
-                  <br />
-                  Icons made by
-                  <a
-                    href="https://www.flaticon.com/authors/vitaly-gorbachev"
-                    title="Vitaly Gorbachev"
-                    >Vitaly Gorbachev</a
-                  >
-                  from
-                  <a href="https://www.flaticon.com/" title="Flaticon">
-                    www.flaticon.com</a
-                  >
-                </small>
+                  Esther Sim</a
+                >
+                <br />
+                Icons made by
+                <a
+                  href="https://www.flaticon.com/authors/vitaly-gorbachev"
+                  title="Vitaly Gorbachev"
+                  >Vitaly Gorbachev</a
+                >
+                from
+                <a href="https://www.flaticon.com/" title="Flaticon">
+                  www.flaticon.com</a
+                >
+              </small>
             </footer>
-          </div> 
+          </div>
         </div>
       </div>
     </div>
-<script src="src/index.js"></script>
+    <script src="src/index.js"></script>
   </body>
 </html>
