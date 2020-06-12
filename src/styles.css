@@ -14,8 +14,7 @@ h2 {
   position: relative;
 }
 .weeklyForecast {
-  background-image: linear-gradient(-225deg, #fffeff 0%, #d7fffe 100%);
-  padding-left: 18px;
+  margin-left: 30px;
   display: block;
   margin: 0 auto;
   border-radius: 30px;
@@ -49,13 +48,17 @@ body {
   margin: 0 auto;
   max-width: 800px;
 }
+.weatherApp {
+  display: block;
+  margin: 0 auto;
+  margin-top: 45px;
+}
 .container {
   background-image: linear-gradient(-225deg, #fffeff 0%, #d7fffe 100%);
   border-radius: 35px;
   display: block;
   margin: 0 auto;
-  margin-top: 5px;
-  padding: 8px;
+  padding: 30px;
   line-height: 1.15;
   max-width: 800px;
 }
@@ -92,10 +95,8 @@ li {
 }
 #second-header {
   margin-left: 0px;
-  margin-bottom: 2px;
+  margin-bottom: 1px;
 }
 footer {
-  display: block;
-  margin-top: 8px;
-  line-height: 1.15;
+  margin-left: 20px;
 }
