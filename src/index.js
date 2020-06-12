@@ -10,7 +10,7 @@ let days = [
   "Wednesday",
   "Thursday",
   "Friday",
-  "Saturday"
+  "Saturday",
 ];
 let day = days[now.getDay()];
 let dateNow = now.getDate();
@@ -26,7 +26,7 @@ let months = [
   "Sep",
   "Oct",
   "Nov",
-  "Dec"
+  "Dec",
 ];
 let monthNow = months[now.getMonth()];
 if (hours < 10) {
@@ -56,7 +56,7 @@ function showWeather(response) {
   let wind = document.querySelector("#wind");
   wind.innerHTML = `Wind: ${Math.round(response.data.wind.speed)}`;
   let city = document.querySelector("#city");
-  city.innerHTML = response.data.name;
+  city.innerHTML = `${response.data.name},${response.data.sys.country}`;
 }
 
 function searchCity(event) {
@@ -82,9 +82,7 @@ form.addEventListener("click", searchCity);
 function getPosition(position) {
   console.log(position);
   let apiKey = `e8afed4d9a3d0f7582b3f63e5e950faf`;
-  let api = `https://api.openweathermap.org/data/2.5/weather?lat=${
-    position.coords.latitude
-  }&lon=${position.coords.longitude}&units=metric`;
+  let api = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric`;
   axios.get(`${api}&appid=${apiKey}`).then(showWeather);
 }
 let button = document.querySelector("#current-button");
