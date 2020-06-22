@@ -30,10 +30,10 @@ let months = [
 ];
 let monthNow = months[now.getMonth()];
 if (hours < 10) {
-  hours = "0" + hours;
+  hours = `0${hours}`;
 }
 if (minutes < 10) {
-  minutes = "0" + minutes;
+  minutes = `0${minutes}`;
 }
 
 current.innerHTML = `${day}, ${dateNow} ${monthNow}, ${hours}:${minutes}`;
@@ -43,20 +43,21 @@ current.innerHTML = `${day}, ${dateNow} ${monthNow}, ${hours}:${minutes}`;
 function showWeather(response) {
   let temp = Math.round(response.data.main.temp);
   let temperature = document.querySelector("#temp");
-  temperature.innerHTML = `${temp}`;
-
   let weather = document.querySelector("#weather-condition");
-  weather.innerHTML = response.data.weather[0].main;
   let feelsLike = document.querySelector("#feels");
+  let humidity = document.querySelector("#humidity");
+  let wind = document.querySelector("#wind");
+  let city = document.querySelector("#city");
+
+  temperature.innerHTML = `${temp}`;
+  weather.innerHTML = response.data.weather[0].main;
   feelsLike.innerHTML = `Feels like: ${Math.round(
     response.data.main.feels_like
   )}`;
-  let humidity = document.querySelector("#humidity");
   humidity.innerHTML = `Humidity: ${Math.round(response.data.main.humidity)}`;
-  let wind = document.querySelector("#wind");
   wind.innerHTML = `Wind: ${Math.round(response.data.wind.speed)}`;
-  let city = document.querySelector("#city");
   city.innerHTML = `${response.data.name},${response.data.sys.country}`;
+  console.log(response.data);
 }
 
 function searchCity(event) {
