@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SheCodesPlus.Week2.EstherS. SparkVejr.</title>
+    <title>VanillaJS.WeatherApp.EstherS.SparkVejr.</title>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link
       rel="stylesheet"
@@ -51,39 +51,37 @@
               src="img/sunnyday.svg"
               alt="cloud"
               id="main-icon"
-              style="max-width: 400px; height: 300px;"
+              style="max-width: 300px; height: 300px;"
             />
           </div>
           <div class="col-6">
-            <div class="card-body">
-              <h1 class="location_h" id="city"></h1>
-              <h2 id="weather-condition"></h2>
-              <div class="temp_h" id="w_temp">
-                <span class="temperature" id="temp">7</span>
-                <span class="units">
-                  <a href="#" id="unitC" class="active">°C </a>|<a
-                    href="#"
-                    id="unitF"
-                    >°F</a
-                  >
-                </span>
-              </div>
-              <section class="weatherDetails">
-                <div class="card-text1" id="time-date"></div>
-                <br />
-                <ul>
-                  <li><span id="feels"> </span> °C</li>
-                  <li><span id="humidity"> </span> %</li>
-                  <li><span id="wind"> </span> m/s</li>
-                </ul>
-                <br />
-                <p>
-                  <small class="text-muted" id="time-ago"
-                    >Last updated 3 mins ago</small
-                  >
-                </p>
-              </section>
+            <h1 class="location_h" id="city"></h1>
+            <h2 id="weather-condition"></h2>
+            <div class="temp_h" id="w_temp">
+              <span class="temperature" id="temp">7</span>
+              <span class="units">
+                <a href="#" id="unitC" class="active">°C </a>|<a
+                  href="#"
+                  id="unitF"
+                  >°F</a
+                >
+              </span>
             </div>
+            <section class="weatherDetails">
+              <div class="card-text1" id="time-date"></div>
+              <br />
+              <ul>
+                <li><span id="feels"> </span> °C</li>
+                <li><span id="humidity"> </span> %</li>
+                <li><span id="wind"> </span> m/s</li>
+              </ul>
+              <br />
+              <p>
+                <small class="text-muted" id="time-ago"
+                  >Last updated 3 mins ago</small
+                >
+              </p>
+            </section>
           </div>
         </div>
         <h1 id="second-header">Weekly Forecast</h1>
