@@ -46,26 +46,24 @@
           </div>
         </form>
         <div class="row">
-          <div class="col-6">
+          <div class="col">
             <img
               src="img/sunnyday.svg"
               alt="cloud"
               id="main-icon"
-              style="max-width: 300px; height: 300px;"
+              style="max-width: 200px; height: 200px;"
             />
           </div>
-          <div class="col-6">
-            <h1 class="location_h" id="city"></h1>
+          <div class="col">
+            <h2 class="location_h" id="city"></h2>
             <h2 id="weather-condition"></h2>
             <div class="temp_h" id="w_temp">
               <span class="temperature" id="temp">7</span>
-              <span class="units">
-                <a href="#" id="unitC" class="active">°C </a>|<a
-                  href="#"
-                  id="unitF"
-                  >°F</a
-                >
-              </span>
+              <a href="#" id="unitC" class="active">°C </a>|<a
+                href="#"
+                id="unitF"
+                >°F</a
+              >
             </div>
             <section class="weatherDetails">
               <div class="card-text1" id="time-date"></div>
@@ -75,16 +73,10 @@
                 <li><span id="humidity"> </span> %</li>
                 <li><span id="wind"> </span> m/s</li>
               </ul>
-              <br />
-              <p>
-                <small class="text-muted" id="time-ago"
-                  >Last updated 3 mins ago</small
-                >
-              </p>
             </section>
           </div>
         </div>
-        <h1 id="second-header">Weekly Forecast</h1>
+        <h2 id="second-header">Weekly Forecast</h2>
         <br />
         <div class="weeklyForecast">
           <div class="row" id="forecast">

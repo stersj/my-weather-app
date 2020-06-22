@@ -30,10 +30,10 @@ button:hover {
   background-color: rgba(96, 164, 206, 0.925);
 }
 .appTitle {
-  font-size: 50px;
+  font-size: 48px;
   opacity: 0.8;
   font-weight: bold;
-  padding-top: 3px;
+  padding-top: 2px;
 }
 .title:hover {
   cursor: pointer;
@@ -56,7 +56,7 @@ body {
   border-radius: 35px;
   display: block;
   margin: 0 auto;
-  padding: 30px;
+  padding: 25px;
   line-height: 1.15;
   max-width: 700px;
 }
@@ -77,11 +77,7 @@ body {
 .weatherCondition {
   font-size: 26px;
 }
-#picture {
-  display: block;
-  margin: 0 auto;
-  padding: 10px;
-}
+
 li {
   list-style: none;
   margin-left: -40px;
@@ -114,4 +110,8 @@ footer {
 .temp_h .active:hover {
   cursor: default;
   text-decoration: none;
+}
+#main-icon {
+  display: block;
+  margin: 0 auto;
 }
