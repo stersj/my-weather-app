@@ -16,7 +16,7 @@
   <body>
     <div class="weatherApp">
       <div class="container">
-        <div class="title">SparkVejr.</div>
+        <div class="appTitle">SparkVejr.</div>
         <br />
         <form>
           <div class="form-group row" id="form-control1">
@@ -75,7 +75,11 @@
                   <li><span id="wind"> </span> m/s</li>
                 </ul>
                 <br />
-                <p><small class="text-muted">Last updated 3 mins ago</small></p>
+                <p>
+                  <small class="text-muted" id="time-ago"
+                    >Last updated 3 mins ago</small
+                  >
+                </p>
               </section>
             </div>
           </div>
@@ -98,6 +102,7 @@
               <img
                 src="img/cloudybutsunny.svg"
                 alt="cloudybutsunny"
+                id="icon"
                 width="70px"
               /><br />
               High: 18°C <br />Low:16°C
