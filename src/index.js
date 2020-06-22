@@ -50,6 +50,8 @@ function showWeather(response) {
   let city = document.querySelector("#city");
   let iconElement = document.querySelector("#main-icon");
 
+  celciusTemperature = response.data.main.temp;
+
   temperature.innerHTML = `${temp}`;
   weather.innerHTML = response.data.weather[0].main;
   feelsLike.innerHTML = `Feels like: ${Math.round(
@@ -82,9 +84,6 @@ function searchCity(event) {
   axios.get(`${api}&appid=${apiKey}`).then(showWeather);
 }
 
-let form = document.querySelector("#search-button");
-form.addEventListener("click", searchCity);
-
 function getPosition(position) {
   console.log(position);
   let apiKey = `e8afed4d9a3d0f7582b3f63e5e950faf`;
@@ -92,6 +91,37 @@ function getPosition(position) {
   axios.get(`${api}&appid=${apiKey}`).then(showWeather);
 }
 let button = document.querySelector("#current-button");
-button.addEventListener("click", showWeather);
+button.addEventListener("click", getPosition);
 
 navigator.geolocation.getCurrentPosition(getPosition);
+
+function showFahrenheitTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temp");
+  //remove active class from C link
+  celciusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrenheitTemperature = (celciusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+function showCelciusTemperature(event) {
+  event.preventDefault();
+  celciusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  let temperatureElement = document.querySelector("#temp");
+  temperatureElement.innerHTML = Math.round(celciusTemperature);
+}
+
+let celciusTemperature = null;
+
+let fahrenheitLink = document.querySelector("#unitF");
+fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
+
+let celciusLink = document.querySelector("#unitC");
+celciusLink.addEventListener("click", showCelciusTemperature);
+
+let form = document.querySelector("#search-button");
+form.addEventListener("click", searchCity);
+
+search("Paris");

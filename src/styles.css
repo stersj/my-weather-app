@@ -7,12 +7,7 @@ h2 {
   display: block;
   margin: 0 auto;
 }
-.temp_h {
-  font-size: 45px;
-  display: block;
-  margin-bottom: 15px;
-  position: relative;
-}
+
 .weeklyForecast {
   margin-left: 30px;
   display: block;
@@ -105,4 +100,18 @@ footer {
   margin-left: 15px;
   margin-top: 10px;
   line-height: 1;
+}
+.temp_h {
+  font-size: 45px;
+  display: block;
+  margin-bottom: 15px;
+  position: relative;
+}
+.temp_h .active {
+  color: rgb(33, 33, 33);
+}
+
+.temp_h .active:hover {
+  cursor: default;
+  text-decoration: none;
 }
