@@ -65,6 +65,7 @@ function showWeather(response) {
     "src",
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 //Forecast
@@ -76,6 +77,17 @@ function displayForecast(response) {
 function showCity(response) {
   document.querySelector("#inputcity").innerHTML = response.data.name;
 }
+
+function getPosition(position) {
+  let apiKey = `e8afed4d9a3d0f7582b3f63e5e950faf`;
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showWeather);
+}
+
+navigator.geolocation.getCurrentPosition(getPosition);
+
 function searchCity(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#inputcity");
@@ -89,28 +101,19 @@ function searchCity(event) {
     currentCity.innerHTML = null;
   }
   let apiKey = `e8afed4d9a3d0f7582b3f63e5e950faf`;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showWeather);
 
-  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${apiKey}`;
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&mode=xml&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
+
 function handleSubmit(event) {
   event.preventDefault();
   let cityInputElement = document.querySelector("#inputcity");
   searchCity(cityInputElement.value);
 }
-function getPosition(position) {
-  let apiKey = `e8afed4d9a3d0f7582b3f63e5e950faf`;
-  let lat = position.coords.latitude;
-  let lon = position.coords.longitude;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
-  axios.get(apiUrl).then(showWeather);
-}
-let button = document.querySelector("#current-button");
-button.addEventListener("click", getPosition);
 
-navigator.geolocation.getCurrentPosition(getPosition);
 //Temperature
 function showFahrenheitTemperature(event) {
   event.preventDefault();
@@ -133,12 +136,10 @@ function showCelciusTemperature(event) {
 let celciusTemperature = null;
 
 let form = document.querySelector("#search-button");
-form.addEventListener("click", searchCity);
+form.addEventListener("submit", searchCity);
 
 let fahrenheitLink = document.querySelector("#unitF");
 fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
 
 let celciusLink = document.querySelector("#unitC");
 celciusLink.addEventListener("click", showCelciusTemperature);
-
-search("Copenhagen");
