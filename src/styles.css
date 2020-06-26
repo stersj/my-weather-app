@@ -60,16 +60,6 @@ body {
   line-height: 1.15;
   max-width: 700px;
 }
-#unitC {
-  position: relative;
-  font-size: 20px;
-  top: -22px;
-}
-#unitF {
-  position: relative;
-  font-size: 20px;
-  top: -22px;
-}
 ::after,
 ::before {
   box-sizing: border-box;
@@ -97,11 +87,16 @@ footer {
   margin-top: 10px;
   line-height: 1;
 }
-.temp_h {
-  font-size: 45px;
+.temperature {
+  font-size: 66px;
   display: block;
-  margin-bottom: 15px;
+  font-weight: 400;
+}
+.units {
   position: relative;
+  font-size: 16px;
+  top: -65px;
+  left: 75px;
 }
 .temp_h .active {
   color: rgb(33, 33, 33);
@@ -112,8 +107,9 @@ footer {
   text-decoration: none;
 }
 #main-icon {
-  display: block;
-  margin: 0 auto;
+  margin-right: 5px;
+  height: 85px;
+  width: 85px;
 }
 .col-6 {
   display: block;
