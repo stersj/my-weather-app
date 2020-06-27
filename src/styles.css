@@ -97,8 +97,8 @@ footer {
   text-decoration: none;
 }
 #main-icon {
-  display: block;
-  margin: 0 auto;
+  margin-top: -25px;
+  float: left !important;
 }
 .weatherDetails {
   display: block;
@@ -133,6 +133,8 @@ h3 {
   border-style: none;
   line-height: 1;
 }
-.weather-temperature {
-  vertical-align: 50em;
+.clearfix-weather-temperature {
+  display: block;
+  margin: 0 auto;
+  margin-top: 40px;
 }
