@@ -86,7 +86,7 @@ function getPosition(position) {
   axios.get(apiUrl).then(showWeather);
 }
 let button = document.querySelector("#search-form");
-button.addEventListener("click", getPosition);
+button.addEventListener("submit", getPosition);
 
 navigator.geolocation.getCurrentPosition(getPosition);
 
