@@ -19,8 +19,8 @@
         <div class="appTitle">SparkVejr.</div>
         <br />
         <form>
-          <div class="form-group row" id="form">
-            <div class="col-sm-4">
+          <div class="form-group row" id="search-form">
+            <div class="col-7">
               <input
                 type="search"
                 placeholder="Search city..."
@@ -36,16 +36,31 @@
             >
               Search
             </button>
-            <button class="btn btn-sm btn-outline-secondary" id="search-form">
+            <button
+              class="btn btn-sm btn-outline-secondary"
+              id="current-button"
+              type="submit"
+            >
               Current location
             </button>
           </div>
         </form>
         <div class="row">
-          <div class="col">
+          <div class="col-5">
             <h2 class="location_h" id="city"></h2>
             <h2 id="weather-condition"></h2>
-            <div class="clearfix weather-temperature">
+            <section class="weatherDetails">
+              <div class="card-text1" id="time-date"></div>
+              <br />
+              <ul>
+                <li><span id="feels"> </span> °C</li>
+                <li><span id="humidity"> </span> %</li>
+                <li><span id="wind"> </span> m/s</li>
+              </ul>
+            </section>
+          </div>
+          <div class="col-7">
+            <div class="weather-temperature">
               <img src="" alt="cloud" id="main-icon" class="float-left" />
               <div class="float-left">
                 <div class="temp_h" id="w_temp">
@@ -61,49 +76,28 @@
               </div>
             </div>
           </div>
-          <div class="col">
-            <section class="weatherDetails">
-              <div class="card-text1" id="time-date"></div>
-              <br />
-              <ul>
-                <li><span id="feels"> </span> °C</li>
-                <li><span id="humidity"> </span> %</li>
-                <li><span id="wind"> </span> m/s</li>
-              </ul>
-            </section>
-          </div>
         </div>
-        <h2 id="second-header">Weekly Forecast</h2>
-        <br />
         <div class="weeklyForecast">
           <div class="row" id="forecast"></div>
-          <footer>
-            <small class="text-muted">
-              <a href="https://github.com/stersj/my-weather-app" target="_blank"
-                >Open-source code</a
-              >, by<a
-                href="https://www.linkedin.com/in/esther-sim-jensen-47bb3120/"
-                target="_blank"
-                class="profileLink"
-              >
-                Esther Sim</a
-              >
-              <br />
-              Icons made by
-              <a
-                href="https://www.flaticon.com/authors/vitaly-gorbachev"
-                title="Vitaly Gorbachev"
-                >Vitaly Gorbachev</a
-              >
-              from
-              <a href="https://www.flaticon.com/" title="Flaticon">
-                www.flaticon.com</a
-              >
-            </small>
-          </footer>
         </div>
       </div>
     </div>
+    <footer>
+      <small class="text-muted">
+        <a href="https://github.com/stersj/my-weather-app" target="_blank"
+          >Open-source code</a
+        >, by<a
+          href="https://www.linkedin.com/in/esther-sim-jensen-47bb3120/"
+          target="_blank"
+          class="profileLink"
+        >
+          Esther Sim</a
+        >
+        <a href="https://condescending-kalam-ef4468.netlify.app/?"
+          >hosted on netlify</a
+        >
+      </small>
+    </footer>
     <script src="src/index.js"></script>
   </body>
 </html>

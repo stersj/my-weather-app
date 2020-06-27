@@ -1,19 +1,17 @@
-h1 {
-  display: block;
-  margin: 0 auto;
-  margin-bottom: 2px;
-}
 h2 {
   display: block;
   margin: 0 auto;
+  margin-bottom: 2px;
+  font-size: 23px;
+  opacity: 0.7;
 }
-
 .weeklyForecast {
   margin-left: 30px;
   display: block;
   margin: 0 auto;
-  border-radius: 30px;
+  border-radius: 20px;
   max-width: 100%;
+  margin-top: 5px;
 }
 .weeklyForecast:hover {
   color: rgb(58, 107, 180);
@@ -30,10 +28,10 @@ button:hover {
   background-color: rgba(96, 164, 206, 0.925);
 }
 .appTitle {
-  font-size: 48px;
+  font-size: 33px;
   opacity: 0.8;
   font-weight: bold;
-  padding-top: 2px;
+  padding-top: 1px;
 }
 .title:hover {
   cursor: pointer;
@@ -41,33 +39,29 @@ button:hover {
 body {
   display: block;
   margin: 0 auto;
-  max-width: 700px;
+  max-width: 650px;
 }
 .weatherApp {
   display: block;
   margin: 0 auto;
-  margin-top: 45px;
+  margin-top: 20px;
   border: solid rgb(184, 182, 182);
   border-width: thin;
-  border-radius: 35px;
+  border-radius: 25px;
 }
 .container {
-  background-image: linear-gradient(-225deg, #fffeff 0%, #d7fffe 100%);
-  border-radius: 35px;
+  background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+  border-radius: 25px;
   display: block;
   margin: 0 auto;
   padding: 25px;
   line-height: 1.15;
-  max-width: 700px;
+  max-width: 650px;
 }
 ::after,
 ::before {
   box-sizing: border-box;
 }
-.weatherCondition {
-  font-size: 26px;
-}
-
 li {
   list-style: none;
   margin-left: -40px;
@@ -75,22 +69,18 @@ li {
 }
 #current-button {
   margin-left: 2px;
-}
-#second-header {
-  margin-left: 0px;
-  margin-bottom: 1px;
-  opacity: 0.8;
+  color: blue;
 }
 footer {
   display: block;
-  margin-left: 15px;
-  margin-top: 10px;
+  margin-top: 8px;
   line-height: 1;
 }
 .temperature {
   font-size: 66px;
   display: block;
   font-weight: 400;
+  opacity: 0.8;
 }
 .units {
   position: relative;
@@ -107,11 +97,42 @@ footer {
   text-decoration: none;
 }
 #main-icon {
-  margin-right: 5px;
-  height: 85px;
-  width: 85px;
-}
-.col-6 {
   display: block;
   margin: 0 auto;
+}
+.weatherDetails {
+  display: block;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+#weather-condition {
+  text-transform: capitalize;
+}
+#time-date {
+  font-weight: bold;
+  font-size: 18px;
+  opacity: 0.8;
+}
+h3 {
+  font-size: 14px;
+  display: block;
+  margin: 0 auto;
+  margin-left: 15px;
+  line-height: 0.8;
+}
+.weather-forecast-temperature {
+  font-size: 13px;
+  display: block;
+  margin: 0 auto;
+  margin-left: 13px;
+  line-height: 0.8;
+}
+.sub-icons {
+  margin: 0 px 10px;
+  vertical-align: middle;
+  border-style: none;
+  line-height: 1;
+}
+.weather-temperature {
+  vertical-align: 50em;
 }
