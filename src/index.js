@@ -85,6 +85,8 @@ function getPosition(position) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showWeather);
 }
+let button = document.querySelector("#current-button");
+button.addEventListener("click", getPosition);
 
 navigator.geolocation.getCurrentPosition(getPosition);
 
@@ -104,7 +106,7 @@ function searchCity(event) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showWeather);
 
-  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&mode=xml&appid=${apiKey}&units=metric`;
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
 
@@ -135,7 +137,7 @@ function showCelciusTemperature(event) {
 
 let celciusTemperature = null;
 
-let form = document.querySelector("#search-button");
+let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchCity);
 
 let fahrenheitLink = document.querySelector("#unitF");
