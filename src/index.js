@@ -53,7 +53,7 @@ function displayForecast(response) {
   for (let index = 0; index < 6; index++) {
     forecast = response.data.list[index];
     forecastElement.innerHTML += `
-    <div class="col">
+    <div class="col-2">
       <h3>
         ${formatHours(forecast.dt * 1000)}
       </h3>
@@ -119,6 +119,24 @@ function searchCity(city) {
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchCity);
 
+function handleSubmit(event) {
+  event.preventDefault();
+  let city = document.querySelector("#inputcity").value;
+  searchCity(city);
+
+  let searchInput = document.querySelector("#inputcity");
+  let currentCity = document.querySelector("#city");
+
+  if (searchInput.value) {
+    currentCity.innerHTML = `${searchInput.value}`;
+  } else {
+    currentCity.innerHTML = null;
+    alert("Type a city...😎");
+  }
+}
+let button = document.querySelector("#search-button");
+button.addEventListener("click", handleSubmit);
+
 //Get position
 function getPosition(position) {
   let apiKey = `e8afed4d9a3d0f7582b3f63e5e950faf`;
@@ -158,3 +176,5 @@ fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
 
 let celciusLink = document.querySelector("#unitC");
 celciusLink.addEventListener("click", showCelciusTemperature);
+
+searchCity("Copenhagen");
