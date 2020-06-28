@@ -111,7 +111,7 @@ function searchCity(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#inputcity").value;
   let currentCity = document.querySelector("#city");
-  if (searchInput =< 0) {
+  if ((searchInput = 0)) {
     alert("Enter a city...😎");
   } else {
     currentCity.innerHTML = null;
@@ -166,4 +166,3 @@ navigator.geolocation.getCurrentPosition(getPosition);
 
 let button = document.querySelector("#current-button");
 button.addEventListener("click", getPosition);
-
