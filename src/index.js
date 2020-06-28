@@ -74,6 +74,19 @@ function showWeather(response) {
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
+//City search
+function searchCity(city) {
+  let apiKey = `e8afed4d9a3d0f7582b3f63e5e950faf`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showWeather);
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let searchInput = document.querySelector("#inputcity");
+  search(searchInput.value);
+}
+
 //Forecast
 
 function displayForecast(response) {
@@ -106,26 +119,18 @@ function displayForecast(response) {
   }
 }
 
-//City search
-function searchCity(event) {
-  event.preventDefault();
-  let searchInput = document.querySelector("#inputcity").value;
-  let currentCity = document.querySelector("#city");
-  if ((searchInput = 0)) {
-    alert("Enter a city...😎");
-  } else {
-    currentCity.innerHTML = null;
-  }
+//Get position
+function getPosition(position) {
   let apiKey = `e8afed4d9a3d0f7582b3f63e5e950faf`;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(showWeather);
-
-  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+  let api = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric`;
+  axios.get(`${api}&appid=${apiKey}`).then(showWeather);
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
 
-let form = document.querySelector("#search-form");
-form.addEventListener("submit", searchCity);
+navigator.geolocation.getCurrentPosition(getPosition);
 
 //Temperature
 function showFahrenheitTemperature(event) {
@@ -154,15 +159,10 @@ fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
 let celciusLink = document.querySelector("#unitC");
 celciusLink.addEventListener("click", showCelciusTemperature);
 
-//Get position
-function getPosition(position) {
-  let apiKey = `e8afed4d9a3d0f7582b3f63e5e950faf`;
-  let lat = position.coords.latitude;
-  let lon = position.coords.longitude;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(displayForecast);
-}
-navigator.geolocation.getCurrentPosition(getPosition);
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
 
-let button = document.querySelector("#current-button");
-button.addEventListener("click", getPosition);
+let formButton = document.querySelector("#search-button");
+formButton.addEventListener("submit", getPosition);
+
+searchCity("Copenhagen");
