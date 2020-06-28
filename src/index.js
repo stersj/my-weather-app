@@ -108,12 +108,10 @@ function showWeather(response) {
 }
 //City search
 function searchCity(city) {
-  event.preventDefault();
-  let searchInput = document.querySelector("#inputcity").value;
   let apiKey = `e8afed4d9a3d0f7582b3f63e5e950faf`;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showWeather);
-  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${searchInput}&appid=${apiKey}&units=metric`;
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
 let form = document.querySelector("#search-form");
@@ -121,8 +119,8 @@ form.addEventListener("submit", searchCity);
 
 function handleSubmit(event) {
   event.preventDefault();
-  let city = document.querySelector("#inputcity").value;
-  searchCity(city);
+  let cityInputElement = document.querySelector("#inputcity");
+  searchCity(cityInputElement.value);
 
   let searchInput = document.querySelector("#inputcity");
   let currentCity = document.querySelector("#city");
@@ -136,6 +134,7 @@ function handleSubmit(event) {
 }
 let button = document.querySelector("#search-button");
 button.addEventListener("click", handleSubmit);
+
 //Get position
 function getPosition(position) {
   let apiKey = `e8afed4d9a3d0f7582b3f63e5e950faf`;
@@ -175,3 +174,8 @@ fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
 
 let celciusLink = document.querySelector("#unitC");
 celciusLink.addEventListener("click", showCelciusTemperature);
+
+let link = document.querySelector("#city");
+link.addEventListener("click", getPosition);
+
+searchCity("Copenhagen");
