@@ -111,6 +111,8 @@ function searchCity(city) {
   let apiKey = `e8afed4d9a3d0f7582b3f63e5e950faf`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showWeather);
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${searchInput}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
 }
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchCity);
