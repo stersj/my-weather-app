@@ -136,7 +136,6 @@ function handleSubmit(event) {
 }
 let button = document.querySelector("#search-button");
 button.addEventListener("click", handleSubmit);
-
 //Get position
 function getPosition(position) {
   let apiKey = `e8afed4d9a3d0f7582b3f63e5e950faf`;
@@ -176,5 +175,3 @@ fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
 
 let celciusLink = document.querySelector("#unitC");
 celciusLink.addEventListener("click", showCelciusTemperature);
-
-searchCity("Copenhagen");
