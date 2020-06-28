@@ -7,12 +7,12 @@ h2 {
   padding-left: 3px;
 }
 .weeklyForecast {
-  margin-left: 30px;
   display: block;
   margin: 0 auto;
   border-radius: 20px;
   max-width: 100%;
   margin-top: 15px;
+  padding-right: 35px;
 }
 .weeklyForecast:hover {
   color: rgb(58, 107, 180);
@@ -41,7 +41,7 @@ button:hover {
 body {
   display: block;
   margin: 0 auto;
-  max-width: 650px;
+  max-width: 500px;
 }
 .weatherApp {
   display: block;
@@ -58,7 +58,7 @@ body {
   margin: 0 auto;
   padding: 25px;
   line-height: 1.15;
-  max-width: 650px;
+  max-width: 550px;
 }
 ::after,
 ::before {
@@ -117,17 +117,17 @@ footer {
   opacity: 0.8;
 }
 h3 {
-  font-size: 14px;
+  font-size: 15px;
   display: block;
   margin: 0 auto;
   margin-left: 16px;
   line-height: 0.8;
 }
 .weather-forecast-temperature {
-  font-size: 13px;
+  font-size: 14px;
   display: block;
   margin: 0 auto;
-  margin-left: 14px;
+  margin-left: 10px;
   line-height: 0.8;
 }
 .sub-icons {
@@ -139,3 +139,4 @@ h3 {
 #search-button:hover {
   cursor: default;
   text-decoration: none;
+}
