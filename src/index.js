@@ -43,7 +43,37 @@ function formatHours(timestamp) {
 
   return `${hours}:${minutes}`;
 }
+//Forecast
 
+function displayForecast(response) {
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = null;
+  let forecast = null;
+
+  for (let index = 0; index < 6; index++) {
+    forecast = response.data.list[index];
+    forecastElement.innerHTML += `
+    <div class="col-2">
+      <h3>
+        ${formatHours(forecast.dt * 1000)}
+      </h3>
+      <img
+        src="https://openweathermap.org/img/wn/${
+          forecast.weather[0].icon
+        }@2x.png"
+        class="sub-icons"
+        width ="65px"
+      />
+      <div class="weather-forecast-temperature">
+        <strong>
+          ${Math.round(forecast.main.temp_max)}°
+        </strong>
+        ${Math.round(forecast.main.temp_min)}°
+      </div>
+    </div>
+  `;
+  }
+}
 //Update current city and temperature
 
 function showWeather(response) {
@@ -76,48 +106,14 @@ function showWeather(response) {
 }
 //City search
 function searchCity(city) {
+  event.preventDefault();
+  let searchInput = document.querySelector("#inputcity").value;
   let apiKey = `e8afed4d9a3d0f7582b3f63e5e950faf`;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showWeather);
 }
-
-function handleSubmit(event) {
-  event.preventDefault();
-  let searchInput = document.querySelector("#inputcity");
-  search(searchInput.value);
-}
-
-//Forecast
-
-function displayForecast(response) {
-  let forecastElement = document.querySelector("#forecast");
-  forecastElement.innerHTML = null;
-  let forecast = null;
-
-  for (let index = 0; index < 6; index++) {
-    forecast = response.data.list[index];
-    forecastElement.innerHTML += `
-    <div class="col-2">
-      <h3>
-        ${formatHours(forecast.dt * 1000)}
-      </h3>
-      <img
-        src="https://openweathermap.org/img/wn/${
-          forecast.weather[0].icon
-        }@2x.png"
-        class="sub-icons"
-        width ="65px"
-      />
-      <div class="weather-forecast-temperature">
-        <strong>
-          ${Math.round(forecast.main.temp_max)}°
-        </strong>
-        ${Math.round(forecast.main.temp_min)}°
-      </div>
-    </div>
-  `;
-  }
-}
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", searchCity);
 
 //Get position
 function getPosition(position) {
@@ -158,11 +154,3 @@ fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
 
 let celciusLink = document.querySelector("#unitC");
 celciusLink.addEventListener("click", showCelciusTemperature);
-
-let form = document.querySelector("#search-form");
-form.addEventListener("submit", handleSubmit);
-
-let formButton = document.querySelector("#search-button");
-formButton.addEventListener("submit", getPosition);
-
-searchCity("Copenhagen");
