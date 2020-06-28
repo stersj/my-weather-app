@@ -27,7 +27,7 @@ function formatDate(timestamp) {
   ];
   let day = days[now.getDay()];
   let dateNow = now.getDate();
-  return `${day}, ${monthNow}, ${formatHours(timestamp)}`;
+  return `${day}, ${formatHours(timestamp)}`;
 }
 
 function formatHours(timestamp) {
@@ -93,7 +93,9 @@ function showWeather(response) {
   feelsLike.innerHTML = `Feels like: ${Math.round(
     response.data.main.feels_like
   )}`;
-  dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  dateElement.innerHTML = `Last updated: ${formatDate(
+    response.data.dt * 1000
+  )}`;
   humidity.innerHTML = `Humidity: ${Math.round(response.data.main.humidity)}`;
   wind.innerHTML = `Wind: ${Math.round(response.data.wind.speed)}`;
   city.innerHTML = `${response.data.name},${response.data.sys.country}`;

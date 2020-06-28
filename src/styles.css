@@ -73,31 +73,35 @@ footer {
   display: block;
   margin-top: 8px;
   line-height: 1;
-  padding-left: 3px;
+  margin-left: 28px;
 }
-.temperature {
+.temp_h {
+  margin-top: 55px;
   font-size: 66px;
-  display: block;
-  font-weight: 400;
+  font-weight: 100;
   opacity: 0.8;
 }
 .units {
-  position: relative;
+  display: block;
+  margin: 0 auto;
+  margin-left: 100px;
+  margin-top: -60px;
   font-size: 16px;
-  top: -65px;
-  left: 75px;
 }
 .temp_h .active {
   color: rgb(33, 33, 33);
 }
-
 .temp_h .active:hover {
   cursor: default;
   text-decoration: none;
 }
 #main-icon {
-  margin-top: -25px;
+  margin-top: 33px;
+  vertical-align: middle;
   float: left !important;
+}
+#temperature {
+  vertical-align: middle;
 }
 .weatherDetails {
   display: block;
@@ -134,8 +138,6 @@ h3 {
   border-style: none;
   line-height: 1;
 }
-.clearfix-weather-temperature {
-  display: block;
-  margin: 0 auto;
-  margin-top: 40px;
-}
+#search-button:hover {
+  cursor: default;
+  text-decoration: none;
