@@ -82,10 +82,8 @@ footer {
   opacity: 0.8;
 }
 .units {
-  display: block;
-  margin: 0 auto;
-  margin-left: 100px;
-  margin-top: -60px;
+  position: absolute;
+  margin-top: 10px;
   font-size: 16px;
 }
 .temp_h .active {
